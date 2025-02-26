@@ -1,5 +1,10 @@
 <script lang="ts">
-    let count = $state(0);
+    export let title;
 </script>
 
-<p>{count}</p>
+<div class="m-8 flex justify-between">
+    <a href="./" class="text-2xl font-bold">{title}</a>
+    <button class="px-4 pb-1 border rounded-full ">
+        menu +
+    </button>
+</div>
