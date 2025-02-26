@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Geist Sans";
+    font-family: "Geist", serif;
     src: url("/fonts/GeistSans.woff2");
 }
 
 @font-face {
-    font-family: "Geist Mono";
+    font-family: "Geist Mono", serif;
     src: url("/fonts/GeistMono.woff2");
 }
 
