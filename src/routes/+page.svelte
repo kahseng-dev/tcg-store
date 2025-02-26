@@ -1,13 +1,27 @@
 <script lang="ts">
     import Navbar from "$lib/components/Navbar.svelte";
 
-    let project = $state("TCG Store")
-    let page = $state("Home")
+    let store = {
+        name: "TCG Store",
+        location: "",
+        contact: "",
+        email: "",
+        logo: "",
+        products: [],
+        timings: [],
+        paymentMethods: [],
+        isOpen: true,
+    };
+
+    let page = $state("Home");
+
 </script>
 
 <svelte:head>
-    <title>{page} | {project}</title>
+    <title>{page} | {store.name}</title>
 </svelte:head>
 
-<Navbar/>
-<p></p>
+<Navbar title={store.name} />
+<div class="m-8">
+    <p></p>
+</div>
