@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Navbar from "$lib/components/Navbar.svelte";
+    import Navbar from "$components/Navbar.svelte";
+    import Carousel from "$components/Carousel.svelte";
 
     let store = {
         name: "TCG Store",
@@ -23,5 +24,5 @@
 
 <Navbar title={store.name} />
 <div class="m-8">
-    <p></p>
+    <Carousel items={store.products} />
 </div>
