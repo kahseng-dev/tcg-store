@@ -2,6 +2,7 @@
     import Menu from "$components/Menu.svelte";
     import Notice from "$components/home/Notice.svelte";
     import ProductShowcase from "$components/home/ProductShowcase.svelte";
+    import Collection from "$components/home/Collection.svelte";
     import Stories from "$components/home/Stories.svelte";
     import Carousel from "$components/Carousel.svelte";
     import Footer from "$components/Footer.svelte";
@@ -34,6 +35,7 @@
         <Carousel items={store.products} />
     </div>
     <ProductShowcase />
+    <Collection />
     <div class="mt-8">
         <Stories />
     </div>
