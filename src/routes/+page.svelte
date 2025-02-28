@@ -34,6 +34,8 @@
         <Carousel items={store.products} />
     </div>
     <ProductShowcase />
-    <Stories />
+    <div class="mt-8">
+        <Stories />
+    </div>
 </div>
 <Footer store={store} />
