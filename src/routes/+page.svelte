@@ -1,6 +1,6 @@
 <script lang="ts">
     import Menu from "$components/Menu.svelte";
-    import Navbar from "$components/home/Navbar.svelte";
+    import Announcement from "$components/home/Announcement.svelte";
     import Carousel from "$components/Carousel.svelte";
     import Footer from "$components/Footer.svelte";
 
@@ -17,6 +17,7 @@
     };
 
     let page = $state("Home");
+    let announcement = $state("Placeholder Text");
 
 </script>
 
@@ -26,7 +27,7 @@
 
 <Menu title={store.name} />
 <div>
-    <Navbar />
+    <Announcement text={announcement} />
     <div class="m-8">
         <Carousel items={store.products} />
     </div>
