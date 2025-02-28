@@ -1,6 +1,6 @@
 <script lang="ts">
     import Menu from "$components/Menu.svelte";
-    import Announcement from "$components/home/Announcement.svelte";
+    import Notice from "$components/home/Notice.svelte";
     import ProductShowcase from "$components/home/ProductShowcase.svelte";
     import Stories from "$components/home/Stories.svelte";
     import Carousel from "$components/Carousel.svelte";
@@ -19,7 +19,7 @@
     };
 
     let page = $state("Home");
-    let announcement = $state("Placeholder Text");
+    let notice = $state("Placeholder Text");
 
 </script>
 
@@ -29,7 +29,7 @@
 
 <Menu title={store.name} />
 <div>
-    <Announcement text={announcement} />
+    <Notice text={notice} />
     <div class="m-8">
         <Carousel items={store.products} />
     </div>
