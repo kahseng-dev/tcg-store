@@ -1,6 +1,6 @@
 <script lang="ts">
     import Menu from "$components/Menu.svelte";
-    import Notice from "$components/home/Notice.svelte";
+    import Marquee from "$components/Marquee.svelte";
     import ProductShowcase from "$components/home/ProductShowcase.svelte";
     import Collection from "$components/home/Collection.svelte";
     import Stories from "$components/home/Stories.svelte";
@@ -20,7 +20,7 @@
 
 
 <Menu title={store.name} />
-<Notice text={notice} />
+<Marquee text={notice} />
 <div class="m-8">
     <Carousel items={products} />
 </div>
