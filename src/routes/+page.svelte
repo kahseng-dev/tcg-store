@@ -7,21 +7,11 @@
     import Carousel from "$components/Carousel.svelte";
     import Footer from "$components/Footer.svelte";
 
-    let store = {
-        name: "TCG Store",
-        location: "",
-        contact: "",
-        email: "",
-        logo: "",
-        products: [],
-        timings: [],
-        paymentMethods: [],
-        isOpen: true,
-    };
+    import { store } from '$lib/data/store';
+    import { products } from '$lib/data/products';
 
     let page = $state("Home");
     let notice = $state("Placeholder Text");
-
 </script>
 
 <svelte:head>
@@ -32,7 +22,7 @@
 <Menu title={store.name} />
 <Notice text={notice} />
 <div class="m-8">
-    <Carousel items={store.products} />
+    <Carousel items={products} />
 </div>
 <ProductShowcase />
 <Collection />
