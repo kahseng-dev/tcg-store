@@ -28,16 +28,15 @@
     <title>{page} | {store.name}</title>
 </svelte:head>
 
+
 <Menu title={store.name} />
-<div>
-    <Notice text={notice} />
-    <div class="m-8">
-        <Carousel items={store.products} />
-    </div>
-    <ProductShowcase />
-    <Collection />
-    <div class="mt-8">
-        <Stories />
-    </div>
+<Notice text={notice} />
+<div class="m-8">
+    <Carousel items={store.products} />
+</div>
+<ProductShowcase />
+<Collection />
+<div class="mt-8">
+    <Stories />
 </div>
 <Footer store={store} />
