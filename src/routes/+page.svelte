@@ -12,6 +12,13 @@
 
     let page = $state("Home");
     let notice = $state("Placeholder Text");
+    let collections = $state([
+        "Pokemon TCG", 
+        "Yu-Gi-Oh", 
+        "Magic: The Gathering", 
+        "One Piece TCG"
+    ]);
+    
 </script>
 
 <svelte:head>
@@ -25,7 +32,7 @@
     <Carousel items={products} />
 </div>
 <ProductShowcase />
-<Collection />
+<Collection items={collections} />
 <div class="mt-8">
     <Stories />
 </div>
