@@ -1,4 +1,33 @@
 <script lang="ts">
+    let stories = fetchStories();
+
+    function fetchStories() {
+        let result = [
+            {
+                caption: "Come check out our new collection!",
+                timestamp: "2025-01-11",
+                images: [""],
+                likes: 11,
+                comments: 7
+            },
+            {
+                caption: "New supplies just arrived!",
+                timestamp: "2025-02-10",
+                images: ["",""],
+                likes: 20,
+                comments: 2
+            },
+            {
+                caption: "Unboxing on the way!",
+                timestamp: "2025-03-05",
+                images: [""],
+                likes: 5,
+                comments: 4
+            }
+        ];
+
+        return result;
+    }
 </script>
 
 <div class="flex flex-col items-center">
@@ -16,16 +45,22 @@
     </div>
 </div>
 <div class="flex justify-center gap-2">
-    <div class="w-64 h-64 bg-zinc-500 flex flex-col text-white">
-        <i class="ph-fill ph-cards text-xl text-right p-2"></i>
-        <div class="flex flex-col h-full justify-center items-center pb-8 px-8">
-            <div class="flex items-center pb-4">
-                <i class="ph ph-heart"></i>
-                <p class="pl-2 pr-4 text-sm">11</p>
-                <i class="ph ph-chat-circle"></i>
-                <p class="pl-2 text-sm">7</p>
+    {#each stories as story}
+        <div class="w-64 h-64 bg-zinc-500 flex flex-col text-white">
+            <div class="h-4 text-right text-xl pr-1">
+                {#if story.images.length > 1}
+                    <i class="ph-fill ph-cards"></i>
+                {/if}
             </div>
-            <p class="text-center text-sm break-words w-full">story caption here</p>
+            <div class="flex flex-col h-full justify-center items-center pb-8 px-8">
+                <div class="flex items-center pb-4">
+                    <i class="ph ph-heart"></i>
+                    <p class="pl-2 pr-4 text-sm">{story.likes}</p>
+                    <i class="ph ph-chat-circle"></i>
+                    <p class="pl-2 text-sm">{story.comments}</p>
+                </div>
+                <p class="text-center text-sm break-words w-full">{story.caption}</p>
+            </div>
         </div>
-    </div>
+    {/each}
 </div>

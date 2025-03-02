@@ -18,7 +18,6 @@
         "Magic: The Gathering", 
         "One Piece TCG"
     ]);
-    
 </script>
 
 <svelte:head>
