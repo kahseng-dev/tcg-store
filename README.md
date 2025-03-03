@@ -1,38 +1,36 @@
-# sv
+# TCG Store
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> tcg-store is a template trading card game store web page project.
 
-## Creating a project
+<img alt="svelte" src="https://img.shields.io/badge/svelte-grey?style=for-the-badge&logo=svelte"/>
+<img alt="typescript" src="https://img.shields.io/badge/typescript-grey?style=for-the-badge&logo=typescript"/>
+<img alt="tailwindcss" src="https://img.shields.io/badge/tailwindcss-grey?style=for-the-badge&logo=tailwindcss"/>
+<img alt="phosphor icons" src="https://img.shields.io/badge/phosphoricons-grey?style=for-the-badge&logo=phosphoricons"/>
+<img alt="bun" src="https://img.shields.io/badge/bun-grey?style=for-the-badge&logo=bun"/>
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Install
 
-```bash
-# create a new project in the current directory
-npx sv create
+Install dependencies with `bun install`
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Development
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start a development server:
 
 ```bash
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
+To create a production version of the webpage:
 
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the production build with `bun run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
