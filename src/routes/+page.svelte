@@ -8,7 +8,6 @@
     import Footer from "$components/Footer.svelte";
 
     import { store } from '$lib/data/store';
-    import { products } from '$lib/data/products';
 
     let page = $state("Home");
     let notice = $state("Placeholder Text");
@@ -25,6 +24,10 @@
             imageURL: "/home/carousel/item-3.webp",
             alt: "Placeholder Image 3"
         }
+    ]);
+    let productShowcaseItems = $state([
+        ["Best Sellers", [1, 2, 3, 4]],
+        ["New Arrivals", [5, 6, 7]]
     ]);
     let collections = $state([
         "Pokemon TCG", 
@@ -44,7 +47,7 @@
 <div class="m-8">
     <Carousel items={carouselItems} />
 </div>
-<ProductShowcase />
+<ProductShowcase items={productShowcaseItems} />
 <Collection items={collections} />
 <div class="mt-8">
     <Stories />
