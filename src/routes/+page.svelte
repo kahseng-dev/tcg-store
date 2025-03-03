@@ -12,6 +12,20 @@
 
     let page = $state("Home");
     let notice = $state("Placeholder Text");
+    let carouselItems = $state([
+        {
+            imageURL: "/home/carousel/item-1.webp",
+            alt: "Placeholder Image 1"
+        },
+        {
+            imageURL: "/home/carousel/item-2.webp",
+            alt: "Placeholder Image 2"
+        },
+        {
+            imageURL: "/home/carousel/item-3.webp",
+            alt: "Placeholder Image 3"
+        }
+    ]);
     let collections = $state([
         "Pokemon TCG", 
         "Yu-Gi-Oh", 
@@ -28,7 +42,7 @@
 <Menu title={store.name} />
 <Marquee text={notice} />
 <div class="m-8">
-    <Carousel items={products} />
+    <Carousel items={carouselItems} />
 </div>
 <ProductShowcase />
 <Collection items={collections} />
