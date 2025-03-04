@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { products, type Product } from '$lib/data/products';
+    import { products, type Product } from "$lib/data/products";
 
     let { items } = $props();
 
@@ -16,7 +16,11 @@
             let productList: Product[] = [];
 
             ids.map((id: number) => {
-                productList.push(products[id]);
+                products.map((product: Product) => {
+                    if (product.id === id) {
+                        productList.push(product);
+                    }
+                });
             });
 
             result.push([tab, productList]);
