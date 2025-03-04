@@ -3,7 +3,6 @@
 
     let { title } = $props();
     let currentYear = $state(new Date().getFullYear());
-
     let isActive: boolean | false = $state(false);
 </script>
 
@@ -15,14 +14,14 @@
             </button>
             <div class="m-8 flex flex-col h-full justify-between gap-8">
                 <div class="flex flex-col gap-4 text-4xl font-semibold">
-                    <p>
+                    <a href="./">
                         Home
                         <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </p>
-                    <p>
+                    </a>
+                    <a href="./products">
                         Products
                         <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </p>
+                    </a>
                     <p>
                         Singles
                         <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
