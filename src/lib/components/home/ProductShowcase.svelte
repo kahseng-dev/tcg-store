@@ -1,4 +1,6 @@
 <script lang="ts">
+    import ProductCard from "$components/ProductCard.svelte";
+
     import { products, type Product } from "$lib/data/products";
 
     let { items } = $props();
@@ -44,15 +46,9 @@
             <button onclick={() => setTabActive(index)} class="duration-300 transition cursor-pointer uppercase text-xs tracking-widest font-semibold text-zinc-500 tab-border {isTabActive(controllerIndex, index) ? "active" : ""}">{tab}</button>
         {/each}
     </div>
-    <div class="my-12 grid auto-cols-min grid-flow-col grid-col-4 gap-8">
+    <div class="my-12 mx-8 flex gap-8">
         {#each productList[controllerIndex][1] as product}
-            <div class="col-span-1 text-center">
-                <img src="{product.image}" alt="{product.name}" class="w-48 h-48 bg-zinc-500 flex items-center"/>
-                <p class="mt-4 h-24 w-48 font-bold overflow-hidden line-clamp-3">{product.name}</p>
-                <p class="m-2 text-zinc-500">{product.text}</p>
-                <p class="m-4">{currency}{product.price}</p>
-                <button class="bg-yellow-500 px-8 py-2 rounded">Add to Cart</button>
-            </div>
+            <ProductCard product={product} currency={currency} />
         {/each}
     </div>
 </div>
