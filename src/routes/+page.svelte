@@ -7,7 +7,7 @@
     import Carousel from "$components/Carousel.svelte";
     import Footer from "$components/Footer.svelte";
 
-    import { store } from '$lib/data/store';
+    import { store } from "$lib/data/store";
 
     let page = $state("Home");
     let notice = $state("Placeholder Text");
