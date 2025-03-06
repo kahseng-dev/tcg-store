@@ -8,7 +8,6 @@
     let tabs = $state(items.map((item: string) => item[0]));
     let controllerIndex: number = $state(0);
     let productList = getProducts(items, products);
-    let currency = "$";
 
     function getProducts(items: [], products: Product[]) {
         let result: [string, Product[]][] = [];
@@ -48,7 +47,7 @@
     </div>
     <div class="my-12 mx-8 flex gap-8">
         {#each productList[controllerIndex][1] as product}
-            <ProductCard product={product} currency={currency} />
+            <ProductCard product={product} />
         {/each}
     </div>
 </div>
