@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { products, type Product } from "$lib/data/products";
+    import { products } from "$lib/data/products";
     import ProductCard from "$components/ProductCard.svelte";
 
     let currency = $state("$");
