@@ -1,6 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import DropdownMenu from "$lib/components/DropdownMenu.svelte";
+    import RadioGroup from "$lib/components/RadioGroup.svelte";
 
     import { products, type Product } from "$lib/data/products";
 
@@ -8,9 +9,9 @@
     let userQuery = "";
     let filterOptions = {
         sort: ["Recently Added", "Lowest Price", "Highest Price", "Best Value"],
-        tags: ["All"],
-        collections: [""],
-        authenticators: [""],
+        tags: ["All", "Pokemon TCG", "Yu Gi Oh", "One Piece TCG"],
+        collections: ["Pokemon (English)", "Pokemon (Japanese)", "Yu Gi Oh", "One Piece TCG", "Basketball", "Football", "Comics", "Baseball"],
+        authenticators: ["CGC", "PSA", "BGS", "SGC", "BVG", "MBA", "WATA"],
         price: {
             from: 0,
             to: 0
@@ -49,25 +50,15 @@
     </div>
     <div class="border-t border-zinc-300 font-normal">
         <p class="py-2 font-bold">Tags</p>
-        {#each filterOptions.tags as tag}
-            <div>
-                <input type="radio" id="{tag}" name="{tag}" value="{tag}" />
-                <label for="{tag}">{tag}</label>
-            </div>
-        {/each}
-        <p class="text-zinc-500 underline font-normal text-sm">See More</p>
+        <RadioGroup name="sort" options={filterOptions.tags} />
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Collections</p>
-        {#each filterOptions.collections as collection}
-            <div>{collection}</div>
-        {/each}
+        <RadioGroup name="collections" options={filterOptions.collections} />
     </div>
     <div class="border-t border-zinc-300">
-        <p class="py-2">Authenticator</p>
-        {#each filterOptions.authenticators as authenticator}
-            <div>{authenticator}</div>
-        {/each}
+        <p class="py-2">Authenticators</p>
+        <RadioGroup name="authenticators" options={filterOptions.authenticators} />
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Price</p>
