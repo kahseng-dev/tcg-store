@@ -2,6 +2,7 @@
     import Button from "$lib/components/Button.svelte";
     import DropdownMenu from "$lib/components/DropdownMenu.svelte";
     import RadioGroup from "$lib/components/RadioGroup.svelte";
+    import CheckboxGroup from "$components/CheckboxGroup.svelte";
 
     import { products, type Product } from "$lib/data/products";
 
@@ -54,11 +55,11 @@
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Collections</p>
-        <RadioGroup name="collections" options={filterOptions.collections} />
+        <CheckboxGroup name="collections" options={filterOptions.collections} showLimit=5 />
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Authenticators</p>
-        <RadioGroup name="authenticators" options={filterOptions.authenticators} />
+        <CheckboxGroup name="authenticators" options={filterOptions.authenticators} />
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Price</p>
