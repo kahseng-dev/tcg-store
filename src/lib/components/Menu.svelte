@@ -1,35 +1,42 @@
 <script lang="ts">
-    import { fade } from 'svelte/transition';
+    import { fade } from "svelte/transition";
+    import Link from "$lib/components/Link.svelte";
 
     let { title } = $props();
+
     let currentYear = $state(new Date().getFullYear());
     let isActive: boolean | false = $state(false);
+    let menuOptions = [
+        {
+            page: "Home",
+            url: "./"
+        },
+        {
+            page: "Products",
+            url: "./products"
+        },        
+        {
+            page: "Singles",
+            url: ""
+        },        
+        {
+            page: "Events",
+            url: ""
+        },
+    ]
 </script>
 
 {#if isActive}
     <div transition:fade class="fixed size-full bg-white/50 z-10 p-8 flex justify-end">
         <div class="bg-black w-[50%] rounded-2xl flex flex-col text-white">
-            <button onclick={() => isActive = !isActive} class="cursor-pointer self-end size-8 m-4" aria-label="Close Menu">
+            <button onclick={() => isActive = !isActive} class="cursor-pointer self-end size-8 m-4" aria-label="close-menu">
                 <i class="ph ph-x text-base"></i>
             </button>
             <div class="m-8 flex flex-col h-full justify-between gap-8">
                 <div class="flex flex-col gap-4 text-4xl font-semibold">
-                    <a href="./">
-                        Home
-                        <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </a>
-                    <a href="./products">
-                        Products
-                        <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </a>
-                    <p>
-                        Singles
-                        <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </p>
-                    <p>
-                        Events
-                        <i class="ph ph-arrow-square-out text-sm text-zinc-300"></i>
-                    </p>
+                    {#each menuOptions as option}
+                        <Link url={option.url} text={option.page} color="white"/>
+                    {/each}
                 </div>
                 <div class="flex flex-col gap-4 text-zinc-500">
                     <hr />
