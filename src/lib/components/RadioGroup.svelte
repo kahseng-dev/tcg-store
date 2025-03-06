@@ -1,10 +1,10 @@
 <script lang="ts">
-    let { name, options, showLimit = 0 } = $props();
+    let { name, options, showLimit = "0" } = $props();
 
     let filteredOptions = $state(options);
     let isChecked = $state(options[0]);
 
-    if (showLimit != 0) {
+    if (showLimit != "0") {
         filteredOptions = options.slice(0, showLimit);
     }
 
@@ -21,6 +21,6 @@
         </label>
     {/each}
 </div>
-{#if showLimit != 0}
+{#if showLimit != "0"}
     <button class="cursor-pointer font-normal underline text-zinc-500 text-sm">View More</button>
 {/if}
