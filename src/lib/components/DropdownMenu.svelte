@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { options } = $props();
+    let { options, ...props } = $props();
 
     let isDropdownActive:boolean = $state(false);
     let selectedOption = $state(options[0]);

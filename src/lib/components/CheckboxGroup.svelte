@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { name, options, showLimit = "0" } = $props();
+    let { name, options, showLimit = "0", ...props } = $props();
 
     let limitedOptions = $state(options);
 
@@ -16,11 +16,11 @@
 <div class="flex flex-col font-normal">
     {#each limitedOptions as option}
         <label class="flex gap-2 cursor-pointer">
-            <input type="checkbox" name="{name}" value="{option}" />
+            <input type="checkbox" name="{name}" value="{option}" bind:group={name} />
             {option}
         </label>
     {/each}
 </div>
 {#if showLimit != "0"}
-    <button onclick={viewMoreOptions} class="cursor-pointer font-normal underline text-zinc-500 text-sm">View More</button>
+    <button onclick={viewMoreOptions} class="cursor-pointer font-normal underline text-zinc-500 text-sm text-left">View More</button>
 {/if}

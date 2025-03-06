@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { name, options, showLimit = "0" } = $props();
+    let { name, options, showLimit = "0", ...props } = $props();
 
     let limitedOptions = $state(options);
     let isChecked = $state(options[0]);
@@ -16,7 +16,7 @@
 <div class="flex flex-col font-normal">
     {#each limitedOptions as option}
         <label class="flex gap-2 cursor-pointer">
-            <input onclick={() => handleOptionClick(option)} type="radio" name="{name}" value="{option}" checked={isChecked === option} />
+            <input onclick={() => handleOptionClick(option)} type="radio" name="{name}" value="{option}" bind:group={name} checked={isChecked === option} />
             {option}
         </label>
     {/each}
