@@ -1,6 +1,8 @@
 <script lang="ts">
-    import { products, type Product } from "$lib/data/products";
     import Button from "$lib/components/Button.svelte";
+    import DropdownMenu from "$lib/components/DropdownMenu.svelte";
+
+    import { products, type Product } from "$lib/data/products";
 
     let searchedProducts: Product[] = [];
     let userQuery = "";
@@ -43,11 +45,7 @@
     </div>
     <div class="border-t border-zinc-300">
         <p class="py-2">Sort</p>
-        <select class="font-normal rounded outline-2 outline-zinc-300 px-2 py-1">
-            {#each filterOptions.sort as option}
-                <option>{option}</option>
-            {/each}
-        </select>
+        <DropdownMenu options={filterOptions.sort} />
     </div>
     <div class="border-t border-zinc-300 font-normal">
         <p class="py-2 font-bold">Tags</p>
