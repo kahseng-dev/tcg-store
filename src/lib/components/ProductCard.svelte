@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Button from "$lib/components/Button.svelte";
+
     let { product, currency } = $props();
 </script>
 
@@ -7,5 +9,5 @@
     <p class="h-12 font-bold overflow-hidden line-clamp-2">{product.name}</p>
     <p class="text-zinc-500 text-sm line-clamp-2">{product.text}</p>
     <p class="font-bold text-2xl">{currency}{product.price}</p>
-    <button class="bg-black py-2 rounded font-bold text-white uppercase">Add to Cart</button>
+    <Button text="Add to Cart" />
 </div>

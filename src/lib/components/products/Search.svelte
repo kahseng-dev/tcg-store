@@ -1,5 +1,6 @@
 <script lang="ts">
     import { products, type Product } from "$lib/data/products";
+    import Button from "$lib/components/Button.svelte";
 
     let searchedProducts: Product[] = [];
     let userQuery = "";
@@ -37,9 +38,7 @@
         <p class="py-2">Search</p>
         <div class="grid grid-cols-5 gap-2">
             <input class="col-span-4 font-normal rounded outline-2 outline-zinc-300 px-2 py-1" placeholder="Pokemon Booster Pack..." />
-            <button class="cursor-pointer bg-black rounded text-white px-2 duration-300 ease-in-out hover:bg-zinc-500" aria-label="Search">
-                <i class="ph ph-magnifying-glass"></i>
-            </button>
+            <Button icon="magnifying-glass" />
         </div>
     </div>
     <div class="border-t border-zinc-300">
@@ -82,9 +81,7 @@
             <div class="grid grid-cols-5 gap-2">
                 <input class="col-span-2 font-normal rounded outline-2 outline-zinc-300 px-2 py-1" placeholder="Enter Min" />
                 <input class="col-span-2 font-normal rounded outline-2 outline-zinc-300 px-2 py-1" placeholder="Enter Max" />
-                <button class="flex items-center justify-center bg-black text-white rounded text-2xl" aria-label="price-search">
-                    <i class="ph ph-arrow-circle-right"></i>
-                </button>
+                <Button icon="arrow-circle-right" />
             </div>
         </div>
     </div>
