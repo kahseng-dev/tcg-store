@@ -2,6 +2,7 @@
 	import { store } from "$lib/data/store";
 	import Menu from "$components/Menu.svelte";
 	import Breadcrumb from "$components/Breadcrumb.svelte";
+	import Price from "$lib/components/Price.svelte";
 	import Button from "$components/Button.svelte";
 	import Footer from "$components/Footer.svelte";
 
@@ -28,7 +29,7 @@
 	</div>
 	<div class="w-1/2 p-12 flex flex-col gap-4">
 		<p class="text-4xl">{data.productDetails.name}</p>
-		<p class="font-bold text-4xl">{data.productDetails.price}</p>
+		<Price price={data.productDetails.price} />
 		<Button text="Add to Cart" />
 		<hr class="text-zinc-300" />
 		<div>
