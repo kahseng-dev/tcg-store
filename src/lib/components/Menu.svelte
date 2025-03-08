@@ -17,7 +17,7 @@
         },        
         {
             page: "Singles",
-            url: ""
+            url: "./singles"
         },        
         {
             page: "Events",
@@ -52,7 +52,7 @@
 {/if}
 
 <div class="p-8 flex justify-between">
-    <a href="./" class="text-2xl font-bold">{title}</a>
+    <a href="../" class="text-2xl font-bold">{title}</a>
     <button onclick={() => isActive = !isActive} class="cursor-pointer rounded-full flex items-center px-4 pb-0.5 border-2 border-black hover:bg-black hover:text-white">
         <span>menu</span>
         <i class="pl-1 ph ph-plus text-base"></i>
