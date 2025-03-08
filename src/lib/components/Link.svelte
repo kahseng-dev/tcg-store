@@ -1,8 +1,5 @@
 <script lang="ts">
-    let { url, text, color } = $props();
+    let { url, text, color, class: className = undefined } = $props();
 </script>
 
-<a class="group w-fit text-{color}" href={url}>
-    {text}
-    <span class="h-[1px] flex max-w-0 bg-{color} transition-all duration-300 group-hover:max-w-full"></span>
-</a>
+<a class="font-semibold text-{color} {className} overflow-hidden line-clamp-2 hover:underline" href={url}>{text}</a>
