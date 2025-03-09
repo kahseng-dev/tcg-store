@@ -21,7 +21,7 @@
         },        
         {
             page: "Events",
-            url: ""
+            url: "./events"
         },
     ]
 </script>
